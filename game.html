@@ -7,25 +7,25 @@
     <title>Hangman in the Gallows</title>
 
     <link rel="stylesheet" href="styles.css">
+    
 
 </head>
 <body>
-    <div class='displayHints'></div>
 
-    <div id='hangmanAnimation'>
-        animation here
-    </div>
+    <p id="answers"></p> <!--This will display the question prompt that will be randomized with each load of the page-->
 
-    <div id='letterBank'></div>
+    <form name="guessForm"> <!--This will contain all of our user input sections-->
+        <input name="userGuess" type="text" size="5" maxlength="1">
+        <input name="guess" type="button" value="Guess" onClick="checkLetters()">
 
-    <div id='guessInput'>
-        <form>
-            <label for="guess">What's your guess, Hangman?</label>
-            <input id="guess" name="userGuess">
-            <button>Guess</button>
-        </form>
-    </div>
+        <p id="wrongLetters">Wrong Letters:</p>
 
+        <img src="http://www.writteninpencil.de/Projekte/Hangman/hangman0.png" id="hangman"><br />
+
+        <input name="newGame" type="button" value="New Game" onClick="location.reload()">
+    </form>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
