@@ -1,12 +1,12 @@
  // hangman
  $( document ).ready(function() {
         console.log("ready!");
-    
-    }); 
+ });
         const answerWords = [
         ["D", "O", "G"],
         ["C", "A", "T"],
         ["G", "O", "D"],
+        ["F", "I", "S"]
         ]
 
         var random = Math.floor((Math.random()*(answerWords.length-1))); 
@@ -29,34 +29,43 @@
             }
         }
         
+       //let playerInput = [];
+       let correct = 0;
+       
         //checks if the the letter provided by the user matches one or more of the letters in the word
-        var guessForm = function(){
-            var f = document.rateform; 
-            var b = f.elements["userGuess"]; 
-            var letterGiven = b.value; // the letter provided by the user
-            letterGiven = letterGiven.toUpperCase();
+        var checkLetters = function(e){
+            e.preventDefault();
+            //playerInput = e.target.value;
+            let playerInput = $('#playerInput').val();
+            //var playerInput = e.target.value; //input value
+            //var b = f.elements["userGuess"]; 
+            //var letterGiven = b.value; // the letter provided by the user
+            let upperCaseLetter = playerInput.toUpperCase();
             for (var i = 0; i < wordChosen.length; i++){
-                if(wordChosen[i] === letterGiven){
-                    word[i] = letterGiven + " ";
-                    var correct = true;
+                if(wordChosen[i] === upperCaseLetter){
+                    word[i] = upperCaseLetter + " ";
+                    correct = true;
+                if(correct === true) {
+
+                    $('#answers').append(playerInput);
                 }
-            b.value = "";
+                }
+            upperCaseLetter = "";
             }
             
             //deletes the guessfield and replaces it with the new one
             var answers = document.getElementById("answers");
             answers.innerHTML = printWord();
             
-            // if a guessed letter is not in the word, the letter will be put on the "wrong letters"-list and hangman grows
+            
+          //gives action for when answer is incorrect
             if(!correct){
                 var wrongLetters = document.getElementById("wrongLetters");
-                var character = document.createTextNode(" " + character);
+                var character = document.createTextNode($('#playerInput').val());
                 wrongLetters.appendChild(character); 
                 tries++;
 
-                //var hangman = document.getElementById("hangman");
-                //hangman.src = "http://www.writteninpencil.de/Projekte/Hangman/hangman" + tries + ".png";
-            }
+             }
             
             //checks if all letters have been found
             var endOfGame = true;
@@ -78,5 +87,8 @@
         function init(){
             printWord();
         }
+
+        $('#guessForm').submit(checkLetters);
         
-        window.onload = init; 
+
+        window.onload = init(); 

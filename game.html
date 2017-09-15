@@ -12,13 +12,14 @@
     <div id='letterBank'></div>
 
     <div id='guessInput'>
-            <form name="guessForm"> <!--This will contain all of our user input sections-->
-                <input name="userGuess" type="text" size="5" maxlength="1">
-                <input name="guess" type="button" value="Guess" onClick="checkLetters()">
+            <form id="guessForm" name="guessForm"> <!--This will contain all of our user input sections-->
+                <input name="userGuess" id="playerInput" type="text" size="5" maxlength="1">
+                <input name="guess" type="submit" value="Guess" >
             </form>
     </div>
-    
+
         <p id="wrongLetters">Wrong Letters:</p>
+        
 
         <img src="http://www.writteninpencil.de/Projekte/Hangman/hangman0.png" id="hangman"><br />
 
