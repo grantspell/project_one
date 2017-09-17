@@ -1,30 +1,47 @@
-<title>Hangman in the Gallows</title>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to the Gallows!</title>
 
     <link rel="stylesheet" href="styles.css">
-   
 
 </head>
+
 <body>
 
-    <p id="answers"></p> <!--This will display the question prompt that will be randomized with each load of the page-->
+    <!--Wrapper Div Holds All Game Pieces-->
+    <div id="wrapper">
 
-    <div id='letterBank'></div>
+        <!--Secret Word + Answer Display-->
+        <p id="answers"></p>
 
-    <div id='guessInput'>
-            <form id="guessForm" name="guessForm"> <!--This will contain all of our user input sections-->
-                <input name="userGuess" id="playerInput" type="text" size="5" maxlength="1">
-                <input name="guess" type="submit" value="Guess" >
+        <!--Player Guess Input-->
+        <div id="guessField">
+            <form id="guessForm" name="guessForm">
+                <input name="userGuess" id="userGuess" type="text" size="5" maxlength="1">
+                <input name="guessButton" id="guessButton" type="submit" value="Guess">
             </form>
-    </div>
+        </div>
 
-        <p id="wrongLetters">Wrong Letters:</p>
-        
+        <!--Wrong Letters Field-->
+        <p id="wrongLetters">Wrong Letters: </p>
 
-        <img src="http://www.writteninpencil.de/Projekte/Hangman/hangman0.png" id="hangman"><br />
+        <!--Hangman Animation Dispaly-->
+        <div id="hangmanAnimation"></div>
 
+        <!--New Game / Reload Page Button-->
         <input name="newGame" type="button" value="New Game" onClick="location.reload()">
 
+    </div>
+
+    <!--JavaScript Files-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
+
 </body>
-</html> 
+
+</html>
