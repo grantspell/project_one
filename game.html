@@ -8,20 +8,25 @@
     <title>Welcome to the Gallows!</title>
 
     <link rel="stylesheet" href="game.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-   
+    <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
+
 </head>
 
 <body>
+<br/>
+<br/>
+<br/>
+<br/>
 
     <h1 id="welcome">WELCOME TO THE GALLOWS</h1>
 
     <!--Wrapper Div Holds All Game Pieces-->
     <div id="wrapper">
-
+        
         <!--Secret Word + Answer Display-->
         <p id="answers"></p>
-
+        <br/>
+        <br/>
         <!--Player Guess Input-->
         <div id="guessField">
             <form id="guessForm" name="guessForm">
@@ -32,13 +37,13 @@
 
         <!--Wrong Letters Field-->
         <p id="wrongLetters"><span class="wrongLetters">Wrong Letters: </span></p>
-
+        <br/><br/>
         <!--Hangman Animation Dispaly-->
         <div id="hangmanAnimation"></div>
-
+    
         <!--New Game / Reload Page Button-->
         <input name="newGame" type="button" value="New Game" onClick="location.reload()">
-
+        
     </div>
 
         <audio id="audio" src="renegade.mp3" controls autoplay loop></audio>

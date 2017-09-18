@@ -4,6 +4,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    font-family: 'Sanchez', serif;
 }
 
 #wrapper {
