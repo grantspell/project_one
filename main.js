@@ -90,12 +90,12 @@ function checkLetters () {
 
     //Lose / Win Display Functions
     function userLost() {
-        alert("You're a deadman, hangman!");
+        alert("You're a deadman, Hangman!");
     };
 
     function userWon() {
         uiPieces.answers.html(wordChosen);
-        alert("You win. Escape the gallows while you can, hangman!");
+        alert("You win. Escape the gallows while you can, Hangman!");
     };
 
     //Lose / Win Logic

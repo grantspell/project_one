@@ -8,10 +8,13 @@
     <title>Welcome to the Gallows!</title>
 
     <link rel="stylesheet" href="game.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+   
 </head>
 
 <body>
+
+    <h1 id="welcome">WELCOME TO THE GALLOWS</h1>
 
     <!--Wrapper Div Holds All Game Pieces-->
     <div id="wrapper">
@@ -28,7 +31,7 @@
         </div>
 
         <!--Wrong Letters Field-->
-        <p id="wrongLetters">Wrong Letters: </p>
+        <p id="wrongLetters"><span class="wrongLetters">Wrong Letters: </span></p>
 
         <!--Hangman Animation Dispaly-->
         <div id="hangmanAnimation"></div>
@@ -37,6 +40,8 @@
         <input name="newGame" type="button" value="New Game" onClick="location.reload()">
 
     </div>
+
+        <audio id="audio" src="renegade.mp3" controls autoplay loop></audio>
 
     <!--JavaScript Files-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
