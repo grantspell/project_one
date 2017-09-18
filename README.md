@@ -9,7 +9,7 @@
 
 # Technologies Used
     Languages - HTML5, CSS3, JavaScript, jQuery
-    Design - FlexBox
+    Design - FlexBox, Google Fonts
     User Stories - Trello
     VSCode
 
