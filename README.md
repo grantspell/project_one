@@ -7,8 +7,24 @@
 
 # Technologies Used
     Languages - HTML5, CSS3, JavaScript, jQuery
-    Design - MaterializeCSS
-    
+    Design - FlexBox
+    User Stories - Trello
+    VSCode
+
+# Features
+    Text Input Letter Guessing
+    New Game Button
+    Themed Music
+    Alerts On Win / Lose
+
+# Wireframing
+
+<img src="images/gameii.jpeg" alt="Wireframing" />
+
+# Future Development
+    Improve Overall Design
+    Add Hangman Animation
+    More JS Effects
 
 # Github Link: https://github.com/grantspell/project_one
 # Trello Link: https://trello.com/b/02iHeEix/project-one
