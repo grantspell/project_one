@@ -10,13 +10,13 @@ let playerOutput = 0,
     tries = 0,
     maxTries = 6;
 uiPieces = {
-    play: $("#play"),
-    answers: $("#answers"),
-    guessForm: $("#guessForm"),
-    userGuess: $("#userGuess"),
-    guessButton: $("#guessButton"),
-    wrongLetters: $("#wrongLetters")
-},
+        play: $("#play"),
+        answers: $("#answers"),
+        guessForm: $("#guessForm"),
+        userGuess: $("#userGuess"),
+        guessButton: $("#guessButton"),
+        wrongLetters: $("#wrongLetters"),
+    },
     playerInput = userGuess;
 
 //Secret Words
@@ -37,9 +37,9 @@ let wordChosen = secretWords[random];
 
 console.log(wordChosen)
 //Button Handlers
-$(function() {;
+$(function () {;
 
-    uiPieces.guessButton.on('click', function(e) {
+    uiPieces.guessButton.on('click', function (e) {
         e.preventDefault();
         checkLetters();
     })
@@ -56,14 +56,14 @@ function init() {
 };
 
 //Answer Check Function / Replace '_' With Correctly Guessed Letter
-function checkLetters () {
+function checkLetters() {
     upperCaseLetter = "";
     matches = false;
 
     if (uiPieces.userGuess && uiPieces.userGuess.val()) {
         upperCaseLetter = $.trim(uiPieces.userGuess.val().toUpperCase());
         console.log(upperCaseLetter)
-    }    
+    }
 
     if (upperCaseLetter) {
         for (let i = 0; i < maskedWord.length; ++i) {
@@ -76,38 +76,38 @@ function checkLetters () {
             uiPieces.wrongLetters.append(upperCaseLetter + " ");
             matches = false;
             ++tries;
-            }
+        }
     }
 
-        //Check Lose / Win Logic
-        if (hasUserLost()) {
-            userLost();
-        } else if (hasUserWon()) {
-            userWon();
-        } else {
-            uiPieces.answers.html(maskedWord);
-        }
+    //Check Lose / Win Logic
+    if (hasUserLost()) {
+        userLost();
+    } else if (hasUserWon()) {
+        userWon();
+    } else {
+        uiPieces.answers.html(maskedWord);
+    }
 
 };
 
-    //Lose / Win Display Functions
-    function userLost() {
-        alert("You're a deadman, Hangman!");
-    };
+//Lose / Win Display Functions
+function userLost() {
+    alert("You're a deadman, Hangman!");
+};
 
-    function userWon() {
-        uiPieces.answers.html(wordChosen);
-        alert("You win. Escape the gallows while you can, Hangman!");
-    };
+function userWon() {
+    uiPieces.answers.html(wordChosen);
+    alert("You win. Escape the gallows while you can, Hangman!");
+};
 
-    //Lose / Win Logic
-    function hasUserLost() {
-        return (tries >= maxTries);
-    };
+//Lose / Win Logic
+function hasUserLost() {
+    return (tries >= maxTries);
+};
 
-    function hasUserWon() {
-        return (maskedWord === wordChosen);
-    };
+function hasUserWon() {
+    return (maskedWord === wordChosen);
+};
 
-    //Onload Functions
-    window.onload = init();
+//Onload Functions
+window.onload = init();
