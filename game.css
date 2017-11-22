@@ -1,15 +1,16 @@
-html,
-body {
+#GameWrapper {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    height: 100vh;
+
     font-family: 'Sanchez', serif;
 }
 
 #wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
 }

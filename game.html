@@ -13,40 +13,44 @@
 </head>
 
 <body>
-<br/>
-<br/>
-<br/>
-<br/>
 
-    <h1 id="welcome">WELCOME TO THE GALLOWS</h1>
+    <div id="GameWrapper">
 
-    <!--Wrapper Div Holds All Game Pieces-->
-    <div id="wrapper">
-        
-        <!--Secret Word + Answer Display-->
-        <p id="answers"></p>
-        <br/>
-        <br/>
-        <!--Player Guess Input-->
-        <div id="guessField">
-            <form id="guessForm" name="guessForm">
-                <input name="userGuess" id="userGuess" type="text" size="5" maxlength="1">
-                <input name="guessButton" id="guessButton" type="submit" value="Guess">
-            </form>
+        <div id="welcome">
+            <h1>WELCOME TO THE GALLOWS</h1>
         </div>
 
-        <!--Wrong Letters Field-->
-        <p id="wrongLetters"><span class="wrongLetters">Wrong Letters: </span></p>
-        <br/><br/>
-        <!--Hangman Animation Dispaly-->
-        <div id="hangmanAnimation"></div>
-    
-        <!--New Game / Reload Page Button-->
-        <input name="newGame" type="button" value="New Game" onClick="location.reload()">
-        
-    </div>
+        <!--Wrapper Div Holds All Game Pieces-->
+        <div id="wrapper">
+
+            <!--Hangman Animation Dispaly-->
+            <div id="hangmanAnimation">
+            </div>
+
+            <!--Secret Word + Answer Display-->
+            <p id="answers"></p>
+
+            <!--Player Guess Input-->
+            <div id="guessField">
+                <form id="guessForm" name="guessForm">
+                    <input name="userGuess" id="userGuess" type="text" size="5" maxlength="1">
+                    <input name="guessButton" id="guessButton" type="submit" value="Guess">
+                </form>
+            </div>
+
+            <!--Wrong Letters Field-->
+            <p id="wrongLetters">
+                <span class="wrongLetters">Wrong Letters: </span>
+            </p>
+
+            <!--New Game / Reload Page Button-->
+            <input name="newGame" type="button" value="New Game" onClick="location.reload()">
+
+        </div>
 
         <audio id="audio" src="renegade.mp3" controls autoplay loop></audio>
+
+    </div>
 
     <!--JavaScript Files-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>

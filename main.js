@@ -61,6 +61,7 @@ function checkLetters () {
 
     if (uiPieces.userGuess && uiPieces.userGuess.val()) {
         upperCaseLetter = $.trim(uiPieces.userGuess.val().toUpperCase());
+        console.log(maskedWord)
     }    
 
     if (upperCaseLetter) {
