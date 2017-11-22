@@ -35,6 +35,7 @@ const secretWords = [
 const random = Math.floor((Math.random() * (secretWords.length)));
 let wordChosen = secretWords[random];
 
+console.log(wordChosen)
 //Button Handlers
 $(function() {;
 
@@ -61,12 +62,12 @@ function checkLetters () {
 
     if (uiPieces.userGuess && uiPieces.userGuess.val()) {
         upperCaseLetter = $.trim(uiPieces.userGuess.val().toUpperCase());
-        console.log(maskedWord)
+        console.log(upperCaseLetter)
     }    
 
     if (upperCaseLetter) {
         for (let i = 0; i < maskedWord.length; ++i) {
-            if (secretWords[random].charAt(i) === upperCaseLetter) {
+            if (secretWords[random].charAt(i) == upperCaseLetter) {
                 maskedWord = maskedWord.substr(0, i) + upperCaseLetter + maskedWord.substr(i + 1);
                 matches = true;
             }
