@@ -9,7 +9,7 @@ let playerOutput = 0,
     matches = 0,
     tries = 0,
     maxTries = 6;
-uiPieces = {
+    uiPieces = {
         play: $("#play"),
         answers: $("#answers"),
         guessForm: $("#guessForm"),
@@ -36,6 +36,7 @@ const random = Math.floor((Math.random() * (secretWords.length)));
 let wordChosen = secretWords[random];
 
 console.log(wordChosen)
+
 //Button Handlers
 $(function () {;
 
@@ -79,6 +80,29 @@ function checkLetters() {
         }
     }
 
+    //ANIMATION
+    if (tries === 1) {
+        $("#hangmanAnimation").attr('src', 'https://i.imgur.com/YR0fDCa.png');
+    }
+    if (tries === 2) {
+        $("#hangmanAnimation").attr('src', 'https://i.imgur.com/leWlypa.png')
+    }
+    if (tries === 3) {
+        $("#hangmanAnimation").attr('src', 'https://i.imgur.com/n1gNmEW.png')
+    }
+    if (tries === 4) {
+        $("#hangmanAnimation").attr('src', 'https://i.imgur.com/U8r0BxO.png')
+    }
+    if (tries === 5) {
+        $("#hangmanAnimation").attr('src', 'https://i.imgur.com/0GkSISb.png')
+    }
+    if (tries === 6) {
+        $("#hangmanAnimation").attr('src', 'https://i.imgur.com/ACnSzIb.png')
+    }
+    else {
+        $("hangmanAnimation").attr('src', 'https://i.imgur.com/FEWWXPw.png')
+    }
+
     //Check Lose / Win Logic
     if (hasUserLost()) {
         userLost();
@@ -90,16 +114,6 @@ function checkLetters() {
 
 };
 
-//Lose / Win Display Functions
-function userLost() {
-    alert("You're a deadman, Hangman!");
-};
-
-function userWon() {
-    uiPieces.answers.html(wordChosen);
-    alert("You win. Escape the gallows while you can, Hangman!");
-};
-
 //Lose / Win Logic
 function hasUserLost() {
     return (tries >= maxTries);
@@ -107,6 +121,21 @@ function hasUserLost() {
 
 function hasUserWon() {
     return (maskedWord === wordChosen);
+};
+
+//Lose / Win Display Functions
+
+function userLost() {
+    setTimeout(function () {
+        alert("You're a deadman, Hangman!");
+    }, 100);
+}
+
+function userWon() {
+    uiPieces.answers.html(wordChosen);
+    setTimeout (function () {
+        alert("You win. Escape the gallows while you can, Hangman!");
+    }, 100);
 };
 
 //Onload Functions
